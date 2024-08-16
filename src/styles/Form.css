@@ -10,6 +10,8 @@ label {
 
 input {
   cursor: pointer;
+  color: var(--colorSlate900);
+  font-weight: 700;
 }
 
 .inputNumber:focus {
@@ -35,7 +37,7 @@ input {
 input#getYears,
 input#getRate {
   width: 115px;
-  margin-left: 5px;
+  margin-left: 15px;
 }
 
 #yearsCase,
@@ -72,7 +74,7 @@ input#getRate {
   align-items: center;
   height: 45px;
   text-align: center;
-  padding: 0px 15px;
+  padding: 0px 10px;
   font-size: 1.2em;
   color: var(--colorSlate700);
   font-weight: 700;
@@ -83,7 +85,7 @@ input#getRate {
 
 #amount {
   width: 100%;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 #amount:focus {
