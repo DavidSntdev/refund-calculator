@@ -47,6 +47,7 @@ function Amount() {
           onBlur={() => setIsAmountFocused(false)}
           value={displayValue}
           onChange={handleChange}
+          placeholder="0,000"
         />
       </div>
     </>

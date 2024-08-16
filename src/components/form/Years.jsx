@@ -37,6 +37,7 @@ function Years() {
             onBlur={() => setIsYearsFocused(false)}
             value={displayValue}
             onChange={handleChange}
+            placeholder="00"
             required
           />
           <label

@@ -7,16 +7,15 @@ function Rate() {
   const formatNumber = (num) => {
     if (num < 0) return "0.00";
     if (num > 100) return "100.00";
-    if (num > 9) return Number(num).toFixed(2);
+    return Number(num).toFixed(2);
   };
 
-  const handleChange = (e) => {
-    const rawValue = e.target.value;
-    const numericValue = parseFloat(rawValue);
+  const handleChange = (e) => isNaN(e.target.value) ? setValue("") : setValue(e.target.value);
 
-    if (!isNaN(numericValue)) {
-      setValue(formatNumber(numericValue));
-    }
+  const handleBlur = () => {
+    setIsRateFocused(false);
+    const numericValue = parseFloat(value);
+    isNaN(numericValue) ? setValue("") : setValue(formatNumber(numericValue))
   };
 
   return (
@@ -31,16 +30,16 @@ function Rate() {
         }}
       >
         <input
-          type="number"
+          type="text"
           name="Rate"
           id="getRate"
           required
           className="inputNumber"
           onFocus={() => setIsRateFocused(true)}
-          onBlur={() => setIsRateFocused(false)}
-          step="0.10"
+          onBlur={handleBlur}
           value={value}
           onChange={handleChange}
+          placeholder="0.00"
         />
         <label
           htmlFor="getRate"
