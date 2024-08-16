@@ -21,13 +21,9 @@ function Type() {
         htmlFor="repayment"
         className="typelabel"
         style={{
-          borderWidth: isRepaymentSelected ? "3px" : "1px",
-          borderColor: isRepaymentSelected
-            ? "var(--colorLime)"
-            : "var(--colorSlate700)",
-          backgroundColor: isRepaymentSelected
-            ? "var(--colorLime100)"
-            : "var(--colorWhite)",
+          borderWidth: isRepaymentSelected && "3px",
+          borderColor: isRepaymentSelected && "var(--colorLime)",
+          backgroundColor: isRepaymentSelected && "var(--colorLime100)",
         }}
       >
         <input
@@ -44,13 +40,9 @@ function Type() {
         htmlFor="interest"
         className="typelabel"
         style={{
-          borderWidth: isInterestSelected ? "3px" : "1px",
-          borderColor: isInterestSelected
-            ? "var(--colorLime)"
-            : "var(--colorSlate700)",
-          backgroundColor: isInterestSelected
-            ? "var(--colorLime100)"
-            : "var(--colorWhite)",
+          borderWidth: isInterestSelected && "3px",
+          borderColor: isInterestSelected && "var(--colorLime)",
+          backgroundColor: isInterestSelected && "var(--colorLime100)",
         }}
       >
         <input

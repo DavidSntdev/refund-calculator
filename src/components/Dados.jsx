@@ -4,7 +4,9 @@ import imgCalc from "../assets/images/icon-calculator.svg";
 
 function Dados() {
   const $calculeRepayments = () => {};
-  const $clearAll = () => {};
+  const $clearAll = () => {
+    
+  };
   return (
     <div id="dados">
       <header>

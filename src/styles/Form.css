@@ -36,7 +36,7 @@ input {
 
 input#getYears,
 input#getRate {
-  width: 115px;
+  width: 135px;
   margin-left: 15px;
 }
 
@@ -52,9 +52,16 @@ input#getRate {
 }
 
 #yearsCase {
-  width: 200px;
-  margin-right: 26px;
+  width: 220px;
   margin-top: 10px;
+}
+
+#years {
+  padding-right: 30px;
+}
+
+#rate {
+  width: auto;
 }
 
 #amountCase {
@@ -63,8 +70,12 @@ input#getRate {
 }
 
 #rateCase {
-  width: 170px;
+  width: 200px;
   margin-top: 10px;
+}
+
+input#getRate {
+  width: 145px;
 }
 
 #yearsText,
@@ -114,6 +125,10 @@ form > p {
   border: solid 1px var(--colorSlate700);
   border-radius: 5px;
   cursor: pointer;
+}
+
+.typelabel:hover {
+  border: 3px solid var(--colorLime);
 }
 
 .typelabel input[type="radio"] {

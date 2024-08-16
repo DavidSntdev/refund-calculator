@@ -2,23 +2,31 @@ main {
   display: flex;
   flex-direction: row;
 
-  max-width: 900px;
+  max-width: 1000px;
   height: auto;
-  
+
   background-color: var(--colorWhite);
   border-radius: 20px;
   overflow: hidden;
 }
 
 #dados {
-  width: 400px;
+  width: 450px;
   background-color: var(--colorWhite);
   padding: 25px;
 }
 
 #result {
-  width: 400px;
-  background-color: var(--colorSlate900);
-  border-bottom-left-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 450px;
   padding: 25px;
+
+  background-color: var(--colorSlate900);
+  border-bottom-left-radius: 60px; 
 }
+
