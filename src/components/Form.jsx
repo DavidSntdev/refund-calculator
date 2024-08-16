@@ -1,13 +1,17 @@
 import "../styles/Form.css";
 import Amount from "./form/Amount";
-import YearsRate from "./form/YearsRate";
 import Type from "./form/Type";
+import Years from "./form/Years";
+import Rate from "./form/Rate";
 
 function Form() {
   return (
     <form action="" method="get">
       <Amount />
-      <YearsRate />
+      <div id="years-rate">
+        <Years />
+        <Rate />
+      </div>
       <Type />
     </form>
   );

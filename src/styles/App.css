@@ -16,7 +16,7 @@ main {
   padding: 25px;
 }
 
-#teste {
+#result {
   width: 400px;
   background-color: var(--colorSlate900);
   border-bottom-left-radius: 60px;

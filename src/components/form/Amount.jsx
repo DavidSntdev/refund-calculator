@@ -3,6 +3,15 @@ import { useState } from "react";
 function Amount() {
   const [isAmountFocused, setIsAmountFocused] = useState(false);
 
+  const [displayValue, setDisplayValue] = useState("");
+
+  const formatNumber = (num) => (!num ? "" : Number(num).toLocaleString("en"));
+
+  const handleChange = (e) => {
+    const rawValue = e.target.value.replace(/\D/g, "");
+    setDisplayValue(formatNumber(rawValue));
+  };
+
   return (
     <>
       <label htmlFor="amount">Mortgage Amount</label>
@@ -29,13 +38,15 @@ function Amount() {
           £
         </label>
         <input
-          type="number"
+          type="text"
           name="Amount"
           id="amount"
           required
           className="inputNumber"
           onFocus={() => setIsAmountFocused(true)}
           onBlur={() => setIsAmountFocused(false)}
+          value={displayValue}
+          onChange={handleChange}
         />
       </div>
     </>

@@ -1,12 +1,13 @@
 import "./styles/App.css";
 import Dados from "./components/Dados";
+import Result from "./components/Result";
 
 function App() {
   return (
     <>
       <main>
         <Dados />
-        <div id="teste"></div>
+        <Result />
       </main>
     </>
   );
