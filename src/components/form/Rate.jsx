@@ -1,8 +1,8 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-function Rate() {
+function Rate({ value, setValue }) {
   const [isRateFocused, setIsRateFocused] = useState(false);
-  const [value, setValue] = useState("");
 
   const formatNumber = (num) => {
     if (num < 0) return "0.00";
@@ -10,12 +10,13 @@ function Rate() {
     return Number(num).toFixed(2);
   };
 
-  const handleChange = (e) => isNaN(e.target.value) ? setValue("") : setValue(e.target.value);
+  const handleChange = (e) =>
+    isNaN(e.target.value) ? setValue("") : setValue(e.target.value);
 
   const handleBlur = () => {
     setIsRateFocused(false);
     const numericValue = parseFloat(value);
-    isNaN(numericValue) ? setValue("") : setValue(formatNumber(numericValue))
+    isNaN(numericValue) ? setValue("") : setValue(formatNumber(numericValue));
   };
 
   return (
@@ -59,5 +60,10 @@ function Rate() {
     </div>
   );
 }
+
+Rate.propTypes = {
+  value: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
+};
 
 export default Rate;

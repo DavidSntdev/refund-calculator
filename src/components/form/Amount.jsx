@@ -1,15 +1,13 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
+import { formatNumber } from "../scripts/formatNumber";
 
-function Amount() {
+function Amount({ value, setValue }) {
   const [isAmountFocused, setIsAmountFocused] = useState(false);
-
-  const [displayValue, setDisplayValue] = useState("");
-
-  const formatNumber = (num) => (!num ? "" : Number(num).toLocaleString("en"));
 
   const handleChange = (e) => {
     const rawValue = e.target.value.replace(/\D/g, "");
-    setDisplayValue(formatNumber(rawValue));
+    setValue(formatNumber(rawValue));
   };
 
   return (
@@ -45,7 +43,7 @@ function Amount() {
           className="inputNumber"
           onFocus={() => setIsAmountFocused(true)}
           onBlur={() => setIsAmountFocused(false)}
-          value={displayValue}
+          value={value}
           onChange={handleChange}
           placeholder="0,000"
         />
@@ -53,5 +51,10 @@ function Amount() {
     </>
   );
 }
+
+Amount.propTypes = {
+  value: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
+};
 
 export default Amount;

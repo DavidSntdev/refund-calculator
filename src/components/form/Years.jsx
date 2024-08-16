@@ -1,18 +1,20 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-function Years() {
+function Years({ value, setValue }) {
   const [isYearsFocused, setIsYearsFocused] = useState(false);
-  const [displayValue, setDisplayValue] = useState("");
 
   const formatNumber = (num) => {
-    if (num < 0) return 0;
-    if (num > 125) return 0;
+    if (num < 0) return "0";
+    if (num > 125) return "125";
+    return num;
   };
 
   const handleChange = (e) => {
-    if (!isNaN(e.target.value)) {
-      const formattedValue = formatNumber(e.target.value);
-      setDisplayValue(formattedValue);
+    const value = e.target.value;
+    if (!isNaN(value)) {
+      const formattedValue = formatNumber(value);
+      setValue(formattedValue);
     }
   };
 
@@ -29,13 +31,13 @@ function Years() {
           }}
         >
           <input
-            type="number"
+            type="text" // Change from "number" to "text"
             name="Term"
             id="getYears"
             className="inputNumber"
             onFocus={() => setIsYearsFocused(true)}
             onBlur={() => setIsYearsFocused(false)}
-            value={displayValue}
+            value={value}
             onChange={handleChange}
             placeholder="00"
             required
@@ -59,5 +61,10 @@ function Years() {
     </>
   );
 }
+
+Years.propTypes = {
+  value: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
+};
 
 export default Years;

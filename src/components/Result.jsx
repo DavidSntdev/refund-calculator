@@ -1,14 +1,22 @@
+import PropTypes from "prop-types";
 import imgEmpty from "../assets/images/illustration-empty.svg";
 import "../styles/Result.css";
+import { formatNumber } from "./scripts/formatNumber";
 
-function Result() {
-  let resultado = false;
+function Result({ resultado }) {
+  const resultadoMensal = resultado
+    ? `£${formatNumber(resultado.monthlyRepayment)}`
+    : "";
+  const resultadoTotal = resultado
+    ? `£${formatNumber(resultado.totalRepayment)}`
+    : "";
+
   return (
     <div
       id="result"
       style={{
-        textAlign: resultado && "left",
-        justifyContent: resultado && "normal",
+        textAlign: resultado ? "left" : "center",
+        justifyContent: resultado ? "normal" : "center",
       }}
     >
       {!resultado ? (
@@ -33,12 +41,12 @@ function Result() {
           <div id="resultados">
             <div id="resultMes">
               <p>Your monthly repayments</p>
-              <h1>£1,797.74</h1>
+              <h1>{resultadoMensal}</h1>
             </div>
             <hr />
             <div id="resultTotal">
               <p>Total you&apos;ll repay over the term</p>
-              <h1>£539,322.94</h1>
+              <h1>{resultadoTotal}</h1>
             </div>
           </div>
         </>
@@ -46,5 +54,12 @@ function Result() {
     </div>
   );
 }
+
+Result.propTypes = {
+  resultado: PropTypes.shape({
+    monthlyRepayment: PropTypes.number.isRequired,
+    totalRepayment: PropTypes.number.isRequired,
+  }),
+};
 
 export default Result;

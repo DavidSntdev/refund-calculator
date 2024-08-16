@@ -34,4 +34,5 @@ header > p {
   border-radius: 25px;
   
   font-weight: 700;
+  cursor: pointer;
 }

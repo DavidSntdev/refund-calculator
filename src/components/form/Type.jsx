@@ -1,29 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
-function Type() {
-  const [isInterestSelected, setIsInterestSelected] = useState(false);
-  const [isRepaymentSelected, setIsRepaymentSelected] = useState(false);
+function Type({ type, setType }) {
+  const [isInterestSelected, setIsInterestSelected] = useState(
+    type === "interest"
+  );
+  const [isRepaymentSelected, setIsRepaymentSelected] = useState(
+    type === "repayment"
+  );
+
+  useEffect(() => {
+    setIsInterestSelected(type === "interest");
+    setIsRepaymentSelected(type === "repayment");
+  }, [type]);
 
   const handleRadioChange = (e) => {
-    if (e.target.id === "interest") {
-      setIsInterestSelected(true);
-      setIsRepaymentSelected(false);
-    } else if (e.target.id === "repayment") {
-      setIsInterestSelected(false);
-      setIsRepaymentSelected(true);
-    }
+    const selectedType = e.target.id;
+    setType(selectedType);
+    setIsInterestSelected(selectedType === "interest");
+    setIsRepaymentSelected(selectedType === "repayment");
   };
 
   return (
     <>
-      <p>Montage Type</p>
+      <p>Mortgage Type</p>
       <label
         htmlFor="repayment"
         className="typelabel"
         style={{
-          borderWidth: isRepaymentSelected && "3px",
-          borderColor: isRepaymentSelected && "var(--colorLime)",
-          backgroundColor: isRepaymentSelected && "var(--colorLime100)",
+          borderWidth: isRepaymentSelected ? "3px" : "1px",
+          borderColor: isRepaymentSelected
+            ? "var(--colorLime)"
+            : "var(--colorSlate700)",
+          backgroundColor: isRepaymentSelected
+            ? "var(--colorLime100)"
+            : "transparent",
         }}
       >
         <input
@@ -32,6 +43,7 @@ function Type() {
           id="repayment"
           className="type"
           onChange={handleRadioChange}
+          checked={isRepaymentSelected}
           required
         />
         Repayment
@@ -40,9 +52,13 @@ function Type() {
         htmlFor="interest"
         className="typelabel"
         style={{
-          borderWidth: isInterestSelected && "3px",
-          borderColor: isInterestSelected && "var(--colorLime)",
-          backgroundColor: isInterestSelected && "var(--colorLime100)",
+          borderWidth: isInterestSelected ? "3px" : "1px",
+          borderColor: isInterestSelected
+            ? "var(--colorLime)"
+            : "var(--colorSlate700)",
+          backgroundColor: isInterestSelected
+            ? "var(--colorLime100)"
+            : "transparent",
         }}
       >
         <input
@@ -51,6 +67,7 @@ function Type() {
           id="interest"
           className="type"
           onChange={handleRadioChange}
+          checked={isInterestSelected}
           required
         />
         Interest Only
@@ -58,5 +75,10 @@ function Type() {
     </>
   );
 }
+
+Type.propTypes = {
+  type: PropTypes.string.isRequired,
+  setType: PropTypes.func.isRequired,
+};
 
 export default Type;
