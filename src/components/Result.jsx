@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import imgEmpty from "../assets/images/illustration-empty.svg";
 import "../styles/Result.css";
-import { formatNumber } from "./scripts/formatNumber";
+import { formatNumber } from "./utils/formatNumber";
 
 function Result({ resultado }) {
   const resultadoMensal = resultado

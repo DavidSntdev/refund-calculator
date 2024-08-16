@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { formatNumber } from "../scripts/formatNumber";
+import { formatNumber } from "../utils/formatNumber";
 
 function Amount({ value, setValue }) {
   const [isAmountFocused, setIsAmountFocused] = useState(false);

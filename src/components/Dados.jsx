@@ -29,7 +29,7 @@ function Dados({
         rate={rate}
         setRate={setRate}
         type={type}
-        setType={setType} 
+        setType={setType}
       />
       <button onClick={calculateRepayments} id="btnCalc">
         <img src={imgCalc} alt="calcular" /> Calculate Repayments

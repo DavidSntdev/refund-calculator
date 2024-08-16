@@ -2,33 +2,18 @@ import "./styles/App.css";
 import Dados from "./components/Dados";
 import Result from "./components/Result";
 import { useState } from "react";
+import { calculateRepayments } from "./components/utils/calculateRepayments"; 
 
 function App() {
   const [amount, setAmount] = useState("");
   const [years, setYears] = useState("");
   const [rate, setRate] = useState("");
-  const [type, setType] = useState(""); // Adicionar o estado `type`
+  const [type, setType] = useState("");
   const [result, setResult] = useState(null);
 
-  const calculateRepayments = () => {
-    if (amount && years && rate && type) {
-      const principal = parseFloat(amount.replace(/,/g, ""));
-      const interestRate = parseFloat(rate) / 100 / 12;
-      const numberOfPayments = parseInt(years) * 12;
-
-      const repayment =
-        (principal * interestRate) /
-        (1 - Math.pow(1 + interestRate, -numberOfPayments));
-
-      const totalRepayment = repayment * numberOfPayments;
-
-      setResult({
-        monthlyRepayment: repayment.toFixed(2),
-        totalRepayment: totalRepayment.toFixed(2),
-      });
-    } else {
-      console.log("Please fill out all fields.");
-    }
+  const handleCalculateRepayments = () => {
+    const result = calculateRepayments(amount, years, rate);
+    setResult(result);
   };
 
   const clearAll = () => {
@@ -49,9 +34,9 @@ function App() {
           setYears={setYears}
           rate={rate}
           setRate={setRate}
-          type={type} // Passar `type`
-          setType={setType} // Passar `setType`
-          calculateRepayments={calculateRepayments}
+          type={type}
+          setType={setType}
+          calculateRepayments={handleCalculateRepayments} // Passar a nova função
           clearAll={clearAll}
         />
         <Result resultado={result} />
