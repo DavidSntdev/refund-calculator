@@ -1,0 +1,56 @@
+#result h1 {
+  color: var(--colorSlate100);
+  margin: 10px 0px;
+  font-size: 1.2em;
+}
+
+#result p {
+  color: var(--colorSlate500);
+  font-weight: 500;
+}
+
+#resultText {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+#resultText h1 {
+  font-size: 1.3em;
+}
+
+#resultados {
+  margin-top: 25px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: hsl(201, 83%, 9%);
+  height: 300px;
+}
+#resultados hr {
+  border: 0;
+  border-top: 1px solid var(--colorSlate900);
+  width: 85%;
+  margin: auto;
+}
+
+#resultMes {
+  border: none;
+  border-top: 4px solid var(--colorLime);
+  border-radius: 10px;
+
+  padding: 25px 20px;
+}
+#resultMes h1 {
+  color: var(--colorLime);
+  margin: 5px 0px;
+  font-size: 4em;
+}
+
+#resultTotal {
+  padding: 0px 20px;
+  padding-top: 40px;
+}
+
+#resultTotal h1 {
+  font-size: 1.5em;
+}
