@@ -1,0 +1,145 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: var(--colorSlate700);
+  margin-bottom: 10px;
+}
+
+input {
+  cursor: pointer;
+}
+
+.inputNumber:focus {
+  outline: none;
+}
+
+.inputNumber {
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+}
+
+.inputNumber::-webkit-inner-spin-button,
+.inputNumber::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+#years-rate {
+  display: flex;
+  margin: 25px 0;
+}
+
+input#getYears,
+input#getRate {
+  width: 115px;
+  margin-left: 5px;
+}
+
+#yearsCase,
+#amountCase,
+#rateCase {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid 1px var(--colorSlate700);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#yearsCase {
+  width: 200px;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+#amountCase {
+  width: 100%;
+  margin-right: 30px;
+}
+
+#rateCase {
+  width: 170px;
+  margin-top: 10px;
+}
+
+#yearsText,
+#amountText,
+#rateText {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  text-align: center;
+  padding: 0px 15px;
+  font-size: 1.2em;
+  color: var(--colorSlate700);
+  font-weight: 700;
+  background-color: var(--colorSlate100);
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+#amount {
+  width: 100%;
+  margin-left: 10px;
+}
+
+#amount:focus {
+  #amountText {
+    background-color: var(--colorLime);
+  }
+}
+
+form > p {
+  color: var(--colorSlate700);
+  margin-bottom: 10px;
+}
+
+.type {
+  margin: auto 10px;
+}
+
+.typelabel {
+  display: flex;
+  align-items: center;
+  appearance: none;
+  width: 100%;
+  height: 45px;
+  color: var(--colorSlate900);
+  font-weight: 900;
+  border: solid 1px var(--colorSlate700);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.typelabel input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--colorSlate900);
+  border-radius: 50%;
+  background-color: var(--colorWhite);
+  cursor: pointer;
+  position: relative;
+}
+
+.typelabel input[type="radio"]:checked {
+  background-color: var(--colorLime);
+  border: 1px solid var(--colorLime);
+}
+
+.typelabel input[type="radio"]:checked::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--colorLime);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

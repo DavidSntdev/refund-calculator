@@ -1,0 +1,37 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px auto 25px auto;
+}
+
+header h1 {
+  color: var(--colorSlate900);
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+header > p {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--colorSlate700);
+}
+
+#btnCalc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--colorSlate900);
+  background-color: var(--colorLime);
+  
+  width: 250px;
+  padding: 15px;
+  gap: 10px;
+  margin-top: 25px;
+  
+  border: none;
+  border-radius: 25px;
+  
+  font-weight: 700;
+}
