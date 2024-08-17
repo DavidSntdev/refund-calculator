@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Years({ value, setValue }) {
+function Years({ value, setValue, error }) {
   const [isYearsFocused, setIsYearsFocused] = useState(false);
 
   const formatNumber = (num) => {
@@ -27,11 +27,11 @@ function Years({ value, setValue }) {
           style={{
             borderColor: isYearsFocused
               ? "var(--colorLime)"
-              : "var(--colorSlate700)",
+              : error && "red",
           }}
         >
           <input
-            type="text" // Change from "number" to "text"
+            type="text"
             name="Term"
             id="getYears"
             className="inputNumber"
@@ -48,15 +48,16 @@ function Years({ value, setValue }) {
             style={{
               backgroundColor: isYearsFocused
                 ? "var(--colorLime)"
-                : "var(--colorSlate100)",
+                : error && "red",
               color: isYearsFocused
                 ? "var(--colorSlate900)"
-                : "var(--colorSlate700)",
+                : error && "white",
             }}
           >
             years
           </label>
         </div>
+        {error && <p className="error" id="errorYears">{error}</p>}
       </div>
     </>
   );
@@ -65,6 +66,7 @@ function Years({ value, setValue }) {
 Years.propTypes = {
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
+  error: PropTypes.string,
 };
 
 export default Years;

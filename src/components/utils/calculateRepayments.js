@@ -1,4 +1,4 @@
-export function calculateRepayments(amount, years, rate) {
+export const calculateRepayments = (amount, years, rate) => {
   if (amount && years && rate) {
     const principal = parseFloat(amount.replace(/,/g, ""));
     const interestRate = parseFloat(rate) / 100 / 12;

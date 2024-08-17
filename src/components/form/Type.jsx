@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-function Type({ type, setType }) {
+function Type({ type, setType, error }) {
   const [isInterestSelected, setIsInterestSelected] = useState(
     type === "interest"
   );
@@ -64,6 +64,11 @@ function Type({ type, setType }) {
         />
         Interest Only
       </label>
+      {error && (
+        <p className="error" style={{ padding: 0 }}>
+          {error}
+        </p>
+      )}
     </>
   );
 }
@@ -71,6 +76,7 @@ function Type({ type, setType }) {
 Type.propTypes = {
   type: PropTypes.string.isRequired,
   setType: PropTypes.func.isRequired,
+  error: PropTypes.string,
 };
 
 export default Type;

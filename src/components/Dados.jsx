@@ -14,6 +14,7 @@ function Dados({
   setType,
   calculateRepayments,
   clearAll,
+  errors,
 }) {
   return (
     <div id="dados">
@@ -32,6 +33,7 @@ function Dados({
         setRate={setRate}
         type={type}
         setType={setType}
+        errors={errors}
       />
       <button onClick={calculateRepayments} id="btnCalc">
         <img src={imgCalc} alt="calcular" /> Calculate Repayments
@@ -51,6 +53,7 @@ Dados.propTypes = {
   setType: PropTypes.func.isRequired,
   calculateRepayments: PropTypes.func.isRequired,
   clearAll: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
 };
 
 export default Dados;

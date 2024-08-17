@@ -13,10 +13,9 @@
     padding: 10px;
     padding-bottom: 25px;
     align-items: center;
-    border-radius: 0;
+    border-radius: 25px;
     width: 500px;
     margin: auto;
-    border-radius: 25px;
   }
 
   #dados,
@@ -65,6 +64,9 @@
   input#getYears,
   input#getRate {
     width: 100%;
+  }
+  .error {
+    padding: 0px;
   }
 }
 
@@ -93,6 +95,11 @@
     min-height: 100px;
   }
 
+  #rateCase,
+  #yearsCase {
+    width: 100%;
+  }
+
   header h1 {
     font-size: 1em;
     margin-bottom: 10px;
@@ -134,5 +141,12 @@
   input#getYears,
   input#getRate {
     width: 100%;
+  }
+  .error {
+    padding: 0px;
+  }
+
+  #errorYears {
+    padding-bottom: 15px;
   }
 }

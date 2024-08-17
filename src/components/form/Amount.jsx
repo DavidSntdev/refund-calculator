@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { formatNumber } from "../utils/formatNumber";
 
-function Amount({ value, setValue }) {
+function Amount({ value, setValue, error }) {
   const [isAmountFocused, setIsAmountFocused] = useState(false);
 
   const handleChange = (e) => {
@@ -18,7 +18,7 @@ function Amount({ value, setValue }) {
         style={{
           borderColor: isAmountFocused
             ? "var(--colorLime)"
-            : "var(--colorSlate700)",
+            : error && "red",
         }}
       >
         <label
@@ -27,10 +27,10 @@ function Amount({ value, setValue }) {
           style={{
             backgroundColor: isAmountFocused
               ? "var(--colorLime)"
-              : "var(--colorSlate100)",
+              : error && "red",
             color: isAmountFocused
               ? "var(--colorSlate900)"
-              : "var(--colorSlate700)",
+              : error && "white",
           }}
         >
           £
@@ -48,6 +48,7 @@ function Amount({ value, setValue }) {
           placeholder="0,000"
         />
       </div>
+      {error && <p className="error">{error}</p>}
     </>
   );
 }
@@ -55,6 +56,7 @@ function Amount({ value, setValue }) {
 Amount.propTypes = {
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
+  error: PropTypes.string,
 };
 
 export default Amount;

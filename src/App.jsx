@@ -3,6 +3,7 @@ import Dados from "./components/Dados";
 import Result from "./components/Result";
 import { useState } from "react";
 import { calculateRepayments } from "./components/utils/calculateRepayments";
+import { validateFields } from "./components/utils/validateFields";
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -10,10 +11,13 @@ function App() {
   const [rate, setRate] = useState("");
   const [type, setType] = useState("");
   const [result, setResult] = useState(null);
-
+  const [errors, setErrors] = useState({});
+  
   const handleCalculateRepayments = () => {
-    const result = calculateRepayments(amount, years, rate);
-    setResult(result);
+    if (validateFields(amount, years, rate, type, setErrors)) {
+      const result = calculateRepayments(amount, years, rate);
+      setResult(result);
+    }
   };
 
   const clearAll = () => {
@@ -22,6 +26,7 @@ function App() {
     setRate("");
     setType("");
     setResult(null);
+    setErrors({});
   };
 
   return (
@@ -38,6 +43,7 @@ function App() {
           setType={setType}
           calculateRepayments={handleCalculateRepayments}
           clearAll={clearAll}
+          errors={errors}
         />
         <Result resultado={result} />
       </main>

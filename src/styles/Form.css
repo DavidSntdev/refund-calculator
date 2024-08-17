@@ -36,7 +36,7 @@ input {
 
 input#getYears,
 input#getRate {
-  width: 135px;
+  width: 125px;
   margin-left: 15px;
 }
 
@@ -75,7 +75,7 @@ input#getRate {
 }
 
 input#getRate {
-  width: 145px;
+  width: 135px;
 }
 
 #yearsText,
@@ -85,7 +85,7 @@ input#getRate {
   align-items: center;
   height: 45px;
   text-align: center;
-  padding: 0px 10px;
+  padding: 0px 15px;
   font-size: 1.2em;
   color: var(--colorSlate700);
   font-weight: 700;
@@ -159,4 +159,10 @@ form > p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.error {
+  color: red;
+  padding-top: 10px;
+  margin: 0;
 }

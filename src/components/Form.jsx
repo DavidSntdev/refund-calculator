@@ -14,15 +14,16 @@ function Form({
   setRate,
   type,
   setType,
+  errors,
 }) {
   return (
-    <form action="" method="get">
-      <Amount value={amount} setValue={setAmount} />
+    <form method="get">
+      <Amount value={amount} setValue={setAmount} error={errors.amount} />
       <div id="years-rate">
-        <Years value={years} setValue={setYears} />
-        <Rate value={rate} setValue={setRate} />
+        <Years value={years} setValue={setYears} error={errors.years} />
+        <Rate value={rate} setValue={setRate} error={errors.rate} />
       </div>
-      <Type type={type} setType={setType} /> 
+      <Type type={type} setType={setType} error={errors.type} />
     </form>
   );
 }
@@ -36,6 +37,12 @@ Form.propTypes = {
   setRate: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
   setType: PropTypes.func.isRequired,
+  errors: PropTypes.shape({
+    amount: PropTypes.string,
+    years: PropTypes.string,
+    rate: PropTypes.string,
+    type: PropTypes.string,
+  }).isRequired,
 };
 
 export default Form;

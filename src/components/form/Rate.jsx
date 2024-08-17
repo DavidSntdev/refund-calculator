@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Rate({ value, setValue }) {
+function Rate({ value, setValue, error }) {
   const [isRateFocused, setIsRateFocused] = useState(false);
 
   const formatNumber = (num) => {
@@ -27,7 +27,7 @@ function Rate({ value, setValue }) {
         style={{
           borderColor: isRateFocused
             ? "var(--colorLime)"
-            : "var(--colorSlate700)",
+            : error && "red",
         }}
       >
         <input
@@ -48,15 +48,16 @@ function Rate({ value, setValue }) {
           style={{
             backgroundColor: isRateFocused
               ? "var(--colorLime)"
-              : "var(--colorSlate100)",
+              : error && "red",
             color: isRateFocused
               ? "var(--colorSlate900)"
-              : "var(--colorSlate700)",
+              : error && "white",
           }}
         >
           %
         </label>
       </div>
+      {error && <p className="error">{error}</p>}
     </div>
   );
 }
@@ -64,6 +65,7 @@ function Rate({ value, setValue }) {
 Rate.propTypes = {
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
+  error: PropTypes.string,
 };
 
 export default Rate;
