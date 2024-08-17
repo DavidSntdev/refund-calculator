@@ -20,8 +20,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/dvd1337/refund-calculator/tree/main/src)
-- Live Site URL: [Add live site URL here](https://dvd1337.github.io/refund-calculator/)
+- Solution URL: [Solution](https://github.com/dvd1337/refund-calculator/tree/main/src)
+- Live Site URL: [Website](https://dvd1337.github.io/refund-calculator/)
 
 ## My process
 
