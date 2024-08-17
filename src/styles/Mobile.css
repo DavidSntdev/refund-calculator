@@ -1,9 +1,79 @@
 @media (max-width: 1000px) {
   body {
     margin: 0;
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-bottom: 25px;
+    align-items: center;
+    border-radius: 0;
+    width: 500px;
+    margin: auto;
+    border-radius: 25px;
+  }
+
+  #dados,
+  #result {
+    box-sizing: border-box;
+    min-height: 100px;
+  }
+
+  #result {
+    border-radius: 25px;
+  }
+
+  header h1 {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  #btnCalc {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  #years,
+  #rate {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  #yearsCase,
+  #rateCase {
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  #years-rate {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input#getYears,
+  input#getRate {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    margin: 0;
     padding: 0;
     overflow-x: hidden;
-    overflow-y: auto; /* Permite rolagem vertical */
+    overflow-y: auto;
     display: block;
   }
 
@@ -19,9 +89,8 @@
   #dados,
   #result {
     width: 100%;
-    padding: 10px;
     box-sizing: border-box;
-    min-height: 100px; /* Ajuste conforme o conteúdo */
+    min-height: 100px;
   }
 
   header h1 {
@@ -59,6 +128,11 @@
 
   #result {
     border-radius: 0;
-    min-height: 100px; /* Ajuste conforme o conteúdo */
+    min-height: 100px;
+  }
+
+  input#getYears,
+  input#getRate {
+    width: 100%;
   }
 }
