@@ -24,15 +24,23 @@ header > p {
 
   color: var(--colorSlate900);
   background-color: var(--colorLime);
-  
+
   width: 250px;
   padding: 15px;
   gap: 10px;
   margin-top: 25px;
-  
+
   border: none;
   border-radius: 25px;
-  
+
   font-weight: 700;
   cursor: pointer;
+}
+
+#btnCalc:hover {
+  background-color: hsl(61, 52%, 61%);
+}
+
+#clear:hover {
+  color: var(--colorSlate900);
 }

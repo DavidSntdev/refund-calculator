@@ -11,8 +11,8 @@ export function calculateRepayments(amount, years, rate) {
     const totalRepayment = repayment * numberOfPayments;
 
     return {
-      monthlyRepayment: repayment.toFixed(2),
-      totalRepayment: totalRepayment.toFixed(2),
+      monthlyRepayment: repayment,
+      totalRepayment: totalRepayment,
     };
   } else {
     console.log("Please fill out all fields.");

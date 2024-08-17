@@ -2,7 +2,7 @@ import "./styles/App.css";
 import Dados from "./components/Dados";
 import Result from "./components/Result";
 import { useState } from "react";
-import { calculateRepayments } from "./components/utils/calculateRepayments"; 
+import { calculateRepayments } from "./components/utils/calculateRepayments";
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -36,7 +36,7 @@ function App() {
           setRate={setRate}
           type={type}
           setType={setType}
-          calculateRepayments={handleCalculateRepayments} // Passar a nova função
+          calculateRepayments={handleCalculateRepayments}
           clearAll={clearAll}
         />
         <Result resultado={result} />

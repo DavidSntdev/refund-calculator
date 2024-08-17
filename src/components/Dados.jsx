@@ -19,7 +19,9 @@ function Dados({
     <div id="dados">
       <header>
         <h1>Mortgage Calculator</h1>
-        <p onClick={clearAll}>Clear All</p>
+        <p onClick={clearAll} id="clear">
+          Clear All
+        </p>
       </header>
       <Form
         amount={amount}
